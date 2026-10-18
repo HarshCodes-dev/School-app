@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { signIn, demoAccounts } from '../lib/auth.js'
+import { signIn } from '../lib/auth.js'
 
 export default function Login({ onLogin }) {
   const [role, setRole] = useState('student')
@@ -25,13 +25,6 @@ export default function Login({ onLogin }) {
     } finally {
       setLoading(false)
     }
-  }
-
-  function fillDemo() {
-    const d = demoAccounts.find((a) => a.role === role)
-    setEmail(d.email)
-    setPassword(d.password)
-    setError('')
   }
 
   return (
@@ -98,12 +91,10 @@ export default function Login({ onLogin }) {
           {loading ? 'Login ho raha hai…' : `${role === 'teacher' ? 'Teacher' : 'Student'} Login`}
         </button>
 
-        <button type="button" className="demo-link" onClick={fillDemo}>
-          Demo {role === 'teacher' ? 'teacher' : 'student'} account bhariye
-        </button>
+        <p className="login-help">Account school admin banate hain. Password bhool gaye to admin se sampark kijiye.</p>
       </form>
 
-      <p className="login-foot">Prototype · Module 1: Login</p>
+      <p className="login-foot">Prototype · Module 1b: Supabase login</p>
     </div>
   )
 }

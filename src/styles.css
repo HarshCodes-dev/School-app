@@ -93,10 +93,9 @@ button, input { font: inherit; }
 .btn-primary:active { background: var(--primary-dark); }
 .btn-primary:disabled { opacity: .7; cursor: wait; }
 
-.demo-link {
-  display: block; width: 100%; margin-top: 12px; border: 0; background: none;
-  color: var(--primary); font-size: 14px; padding: 8px; cursor: pointer;
-}
+.login-help { margin: 14px 0 0; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.4; }
+
+.splash { min-height: 100vh; display: grid; place-items: center; color: var(--muted); }
 
 .login-foot { text-align: center; color: var(--muted); font-size: 12px; margin: 20px 0; }
 
