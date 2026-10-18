@@ -1,0 +1,123 @@
+:root {
+  --primary: #4338ca;
+  --primary-dark: #3730a3;
+  --primary-soft: #eef2ff;
+  --bg: #f4f5fb;
+  --text: #1e1b3a;
+  --muted: #6b7280;
+  --border: #e3e5f0;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button, input { font: inherit; }
+
+/* ---------- Login ---------- */
+.login-page {
+  min-height: 100vh;
+  max-width: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-hero {
+  background: linear-gradient(160deg, var(--primary), #6d5dfc);
+  color: #fff;
+  text-align: center;
+  padding: calc(40px + env(safe-area-inset-top)) 24px 70px;
+  border-radius: 0 0 28px 28px;
+}
+.login-hero .logo {
+  width: 64px; height: 64px; margin: 0 auto 12px;
+  display: grid; place-items: center;
+  font-size: 32px; background: rgba(255,255,255,.18); border-radius: 18px;
+}
+.login-hero h1 { margin: 0 0 6px; font-size: 26px; }
+.login-hero p { margin: 0; font-size: 14px; opacity: .9; }
+
+.login-card {
+  background: #fff;
+  margin: -40px 16px 0;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(30, 27, 58, .1);
+}
+
+.role-toggle {
+  display: flex; gap: 6px; padding: 4px;
+  background: var(--primary-soft); border-radius: 12px; margin-bottom: 16px;
+}
+.role-toggle button {
+  flex: 1; border: 0; background: none; padding: 10px 6px;
+  border-radius: 9px; color: var(--muted); font-weight: 600; cursor: pointer;
+}
+.role-toggle button.on {
+  background: #fff; color: var(--primary); box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+
+.field { display: block; margin-bottom: 14px; }
+.field > span { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.field input {
+  width: 100%; padding: 12px 14px; font-size: 16px; /* 16px = iPhone zoom nahi karega */
+  border: 1.5px solid var(--border); border-radius: 12px; background: #fff; color: var(--text);
+}
+.field input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+
+.pw-wrap { position: relative; }
+.pw-wrap input { padding-right: 64px; }
+.pw-toggle {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  border: 0; background: none; color: var(--primary); font-weight: 600; font-size: 13px;
+  padding: 8px 10px; cursor: pointer;
+}
+
+.error {
+  background: var(--danger-soft); color: var(--danger);
+  padding: 10px 12px; border-radius: 10px; font-size: 14px; margin-bottom: 14px;
+}
+
+.btn-primary {
+  width: 100%; border: 0; background: var(--primary); color: #fff;
+  padding: 14px; font-size: 16px; font-weight: 700; border-radius: 12px; cursor: pointer;
+}
+.btn-primary:active { background: var(--primary-dark); }
+.btn-primary:disabled { opacity: .7; cursor: wait; }
+
+.demo-link {
+  display: block; width: 100%; margin-top: 12px; border: 0; background: none;
+  color: var(--primary); font-size: 14px; padding: 8px; cursor: pointer;
+}
+
+.login-foot { text-align: center; color: var(--muted); font-size: 12px; margin: 20px 0; }
+
+/* ---------- Home (placeholder) ---------- */
+.home-page { max-width: 480px; margin: 0 auto; min-height: 100vh; }
+.topbar {
+  background: var(--primary); color: #fff;
+  padding: calc(14px + env(safe-area-inset-top)) 16px 14px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar-sub { font-size: 12px; opacity: .85; }
+.topbar-name { font-size: 18px; font-weight: 700; }
+.btn-ghost {
+  background: rgba(255,255,255,.18); color: #fff; border: 0;
+  padding: 8px 14px; border-radius: 10px; font-weight: 600; cursor: pointer;
+}
+.home-main { padding: 14px; }
+.card {
+  background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.card h2 { margin: 0 0 8px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); line-height: 1.5; }
+.card.muted ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); line-height: 1.8; }
